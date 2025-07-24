@@ -9,7 +9,7 @@ import requests  # Used to get earth images for the background
 from datetime import datetime
 
 ### Constants ###
-imagePath = 'PATHHHH'  # Replace with the DIRECT file path to your wallpaper
+imagePath = 'PATTTTTHHHH'  # Replace with the DIRECT file path to your wallpaper
 SPI_SETDESKWALLPAPER = 20  # Tells Windows API to perform action 20: set desktop wallpaper
 url = 'https://cdn.star.nesdis.noaa.gov/GOES19/ABI/FD/GEOCOLOR/10848x10848.jpg'
 
@@ -25,13 +25,13 @@ def fetchEarthPicture(imagePath):
         print(f"Failed to download image. Status code: {response.status_code}")
 fetchEarthPicture(imagePath)
 img = Image.open(imagePath)
-font = ImageFont.truetype("font.ttf", 1000)
+font = ImageFont.truetype("PATHHHHHfont.ttf", 750)
 currentDate = datetime.now().strftime("%d/%m - %H:%M")
 text = "EARTH AT: " + currentDate
 draw = ImageDraw.Draw(img)
 textArea = draw.textbbox((0, 0), text, font=font)
 textWidth = textArea[2] - textArea[0]
-draw.text(((img.width - textWidth) / 2, img.height/2), text, font=font, fill="white", stroke_fill="black", stroke_width=50)
-img.save(imagePath) 
+draw.text(((img.width - textWidth) / 2, (img.height + textArea[1]) / 2), text, font=font, fill="white", stroke_fill="black", stroke_width=15)
+img.save(imagePath)
 
 setWallpaper(imagePath)
