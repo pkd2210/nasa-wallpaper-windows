@@ -11,7 +11,7 @@ from datetime import datetime
 ### Constants ###
 imagePath = 'PATTTTTHHHH'  # Replace with the DIRECT file path to your wallpaper
 SPI_SETDESKWALLPAPER = 20  # Tells Windows API to perform action 20: set desktop wallpaper
-url = 'https://cdn.star.nesdis.noaa.gov/GOES19/ABI/FD/GEOCOLOR/10848x10848.jpg'
+url = 'https://cdn.star.nesdis.noaa.gov/GOES19/ABI/FD/GEOCOLOR/latest.jpg'
 
 def setWallpaper(imagePath):
     ctypes.windll.user32.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, os.path.abspath(imagePath).encode(), 0)
